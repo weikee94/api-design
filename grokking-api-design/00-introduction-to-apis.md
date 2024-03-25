@@ -26,7 +26,7 @@
 - provides security, authentication, and rate limiting to protect APIs from overuse
 - provide stabilization to the system by balancing the network traffic
 
-![API Gateway](grokking-api-design/assets/images/001.png "API Gateway")
+![API Gateway](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/001.png "API Gateway")
 
 ## Monolithic Architecture VS Microservice Architecture
 
