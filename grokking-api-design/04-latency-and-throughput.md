@@ -49,3 +49,35 @@ ping -c 5 educative.io
 
 ![jitter calculation](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/016.png "jitter calculation")
 
+
+## Latency-bandwidth product and network utilization
+- sending one packet and then waiting for a response is wasteful, we can determine how many packets a link can hold by using latency-bandwidth product.
+- formula: latency * bandwidth
+
+For example, if the effective bandwidth measured on the client-side is 1 Mbps, and the client-to-service user-perceived time is 200 ms, then how many bits will be in transit?
+
+latency * bandwidth = 200 * 1000 bits = 200 kbits
+
+
+## Application classes
+- application can be divide into different classes on the basis of delay, such as elastic and real time applications. Elastic applications can tolerate the delay and real-time application cannot tolerate substantial delay.
+
+
+![application classes](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/017.png "application classes")
+
+### Type of elastic applications
+
+| Types | Description |
+| ----- | ----------- |
+| Interactive | Any application that allows us to input data and get a response. For example, Telnet. |
+| Interactive bulk | Any application that allows us to input data and get a large amount of responses. For example, File Transfer Protocol (FTP). |
+| Asynchronous | Any application that does not wait for the response to give the next instruction. For example, email. |
+
+### Type of real-time applications
+
+| Types | Description |
+| ----- | ----------- |
+| Hard/intolerant | This doesn’t allow any tolerance for delay, for example, live video conferencing. |
+| Soft/tolerant | This allows a little tolerance for delay, for example, web browsing. |
+| Adaptive | Some applications adjust their functionality according to the network conditions and are considered adaptive. For example, the playback point of a live streaming event. The playback point tells us how long the buffer keeps the packet before it’s played back. If packets arrive within 200 ms, then we can set the playback point to 200 ms. But if packets are suffering from some delay due to network conditions, then the application can adjust the playback point to the possible delay, and it’s referred to as “delay adaptive.” |
+| Non-adaptive |  Some applications don’t adjust their functionality according to the network conditions. For example, if the playback time is 300 ms and suddenly packets are arriving within 100 ms, the packets still wait for 300 ms before it’s played back. |
