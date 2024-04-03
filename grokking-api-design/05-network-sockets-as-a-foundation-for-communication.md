@@ -26,6 +26,7 @@
 - stream socket created on TCP can be in different states with different flags
 
 | type | desc |
+| ---- | ---- |
 | SYN | synchronization flag, the number in front of SYN is the sequence number of the packet being sent  |
 | ACK | acknowledgement flag, the number in front of ACK is the sequence number indicating the last successfully received byte by the remote peer |
 | FIN | finish flag, the number in front of ACK is the sequence number indicating the last successfully received byte by the remote peer |
