@@ -42,6 +42,32 @@
 
 ![role of sockets](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/021.png "role of sockets")
 
+| Function | Description |
+| -------- | ----------- |
+| socket | creates a file descriptor for an endpoint of a connection, representing the socket address family, socket type, transport protocol, and so on |
+| bind | associate a buffer with socket descriptor and gives a unique local name |
+| listen | changes the mode to only accept new connections and associates a connection queue to keep track of pending connections |
+| connect | creates an active connection when using a stream socket and specifies the peer when using a datagram or raw socket |
+| accept | connects to a pending request by defining a new socket descriptor with the same set of associated properties |
+| send | writes data from the buffer to a socket and transmits it to the other end of a connection |
+| recv | reads data from the socket and stores it in a buffer transmitted by the other end of a connection |
+| close | closes the connection and frees the resources associated with the socket descriptor |
 
 
+### Example of a running application
+
+- proto: shows the type of protocol used for network transport
+- local address: shows the address of the source socket 
+- foregin address: shows the address of the destination socket
+- state: shows the state of the connection
+
+![network statistics](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/022.png "network statistics")
+
+- we see that some rows have the IP address, 0.0.0.0 which means that the socket is open for connections through all the device network interfaces
+
+| status | description |
+| ------ | ----------- |
+| LISTEN | indicates server sockets passively listening for incoming connection requests |
+| ESTABLISHED | represent the connection between the vue, database and the node js server |
+| TIME_WAIT | show that the connection is closed from the local socket and is waiting for the remote socket to finish sending data |
 
