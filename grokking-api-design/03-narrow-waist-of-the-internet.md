@@ -8,7 +8,7 @@
     - modification in one layer has no impact on the other
     - flexibility accommodates different types of application
 
-![layered architecture](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/006.png "layered architecture")
+![layered architecture](assets/images/006.png "layered architecture")
 
 - each layer has at least one protocol that determines the following information:
     - the order of message over network
@@ -23,7 +23,7 @@
 ### The OSI model
 - open system interconnection consists of seven layer
 
-![osi model](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/007.png "osi model")
+![osi model](assets/images/007.png "osi model")
 
 | Layer | Desc | 
 | ----- | ---- |
@@ -51,7 +51,7 @@ Physical layer: It handles the transmission of bitstreams on the physical link b
 
 ## THE TCP/IP model
 
-![tcp/ip model](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/008.png "tcp/ip model")
+![tcp/ip model](assets/images/008.png "tcp/ip model")
 
 - The physical layer and data link layer are combined in the network access layer. It consists of multiple network technologies such as Ethernet. 
 - The internet layer is responsible for logical data transmission over the network. 
@@ -59,4 +59,4 @@ Physical layer: It handles the transmission of bitstreams on the physical link b
 - The application layer, we have multiple protocols—such as HTTP, SMTP, FTP, and so on—to interpret and display the data on the screen. 
 
 ## New narrow waist of the Internet
-![new narrow waist of the internet](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/009.png "new narrow waist of the internet")
+![new narrow waist of the internet](assets/images/009.png "new narrow waist of the internet")

@@ -8,7 +8,7 @@
 - automation
 
 ## API monetization models
-![API Monetization Models](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/005.png "API Monetization Models")
+![API Monetization Models](assets/images/005.png "API Monetization Models")
 
 ## Performance Measures
 - tools that with metrics that drive business decisions: SLIs, SLOs, SLAs

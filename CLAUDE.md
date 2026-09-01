@@ -32,18 +32,20 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
   three-digit counter across the whole course**, not per-lesson: `000.png` … `022.png`.
   `002` is an unused gap. **The next image to add is `023`.**
 - Both `.png` and `.svg` are in use; keep the extension the source actually is.
-- Reference them with an absolute GitHub blob URL pinned to `main`, plus a title attribute:
+- Reference them with a **path relative to the note**, plus a title attribute:
 
   ```markdown
-  ![Alt text](https://github.com/weikee94/api-design/blob/main/grokking-api-design/assets/images/NNN.png "Alt text")
+  ![Alt text](assets/images/NNN.png "Alt text")
   ```
 
-- GitHub's markdown renderer rewrites `/blob/` to `/raw/`, so these do render on github.com
-  (verified). They will **not** render in a local markdown preview or an offline editor, since
-  the raw `blob` URL serves HTML rather than the image. That is the accepted tradeoff here — do
-  not "fix" it to relative paths without being asked.
-- One reference is inconsistent: `000.png` in `00-introduction-to-apis.md` is pinned to commit
-  `669ae51` instead of `main`. It works, but it is the odd one out of 22.
+- These used to be absolute `https://github.com/.../blob/main/...` URLs. Those render on
+  github.com — GitHub's markdown renderer silently rewrites `/blob/` to `/raw/` — but the
+  URL itself serves HTML, so they break everywhere else: local preview, offline editors, and
+  any site built from these files. They were converted to relative paths when the notes were
+  lined up for a static site. **Do not convert them back.**
+- Diagrams the author draws are inline ` ```mermaid ` blocks, not files in `assets/images/`.
+  GitHub renders them natively. Notes `00`–`05` are course screenshots; `06` onward are
+  authored mermaid. New notes should prefer mermaid.
 
 ## Commit conventions
 
@@ -52,7 +54,12 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
 - `feat: <NN> <lesson topic>` — occasionally used instead when the commit covers one lesson.
 - `fix: <what>` — corrections to already-committed notes.
 
-## Known repository nits
+## Planned direction
 
-`.DS_Store` is tracked and there is no `.gitignore`. Mention it if it gets in the way; don't
-remove it as a side effect of unrelated work.
+These notes are being lined up to become a static site on Vercel (Nextra was chosen, so the
+markdown stays the source of truth and interactive React components can be added per page
+later). Two consequences for anything written now:
+
+- image paths must stay relative — see above
+- the 22 course screenshots in `00`–`05` are being replaced with authored mermaid diagrams
+  over time; prefer mermaid when adding or revising a note
