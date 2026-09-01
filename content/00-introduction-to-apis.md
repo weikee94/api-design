@@ -2,7 +2,14 @@
 
 - service of network APIs were availale for developers to consume using remote procedure calls(RPCs).
 
-![API Design](assets/images/000.png "API Design")
+```mermaid
+flowchart LR
+    U[End users] --> A["Apps in browser,<br/>mobile devices"]
+    A -- request --> API[API]
+    API -- response --> A
+    API --> WS[Web server]
+    WS --> DB[(Database)]
+```
 
 ## Benefits of APIs
 - complexity abstraction: the caller only focus on the interface and return data from callee
@@ -26,7 +33,24 @@
 - provides security, authentication, and rate limiting to protect APIs from overuse
 - provide stabilization to the system by balancing the network traffic
 
-![API Gateway](assets/images/001.png "API Gateway")
+**Without a gateway** — a separate API call per microservice:
+
+```mermaid
+flowchart LR
+    C[Client] -- separate API call --> M1[Microservice]
+    C -- separate API call --> M2[Microservice]
+    C -- separate API call --> M3[Microservice]
+```
+
+**With a gateway** — one entry point for all API requests:
+
+```mermaid
+flowchart LR
+    C[Client] -- one request --> GW["API gateway<br/>single entry point"]
+    GW --> M1[Microservice]
+    GW --> M2[Microservice]
+    GW --> M3[Microservice]
+```
 
 ## Monolithic Architecture VS Microservice Architecture
 

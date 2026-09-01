@@ -38,9 +38,10 @@ public/assets/      GENERATED from content/assets — gitignored, never edit
 This is the part that has caused repeated breakage (see the `fix: image url`, `fix: image path`,
 `fix: image url path` commits), so follow it exactly.
 
-- Images live in `grokking-api-design/assets/images/` and are named with a **globally sequential
-  three-digit counter across the whole course**, not per-lesson: `000.png` … `022.png`.
-  `002` is an unused gap. **The next image to add is `023`.**
+- Images live in `content/assets/images/` and are named with a **globally sequential
+  three-digit counter across the whole course**, not per-lesson. `002`, and now `000` and `001`,
+  are unused gaps — the counter is never renumbered, so gaps only ever grow.
+  **The next image to add is `023`** — but prefer a mermaid diagram, see below.
 - Both `.png` and `.svg` are in use; keep the extension the source actually is.
 - Reference them with a **path relative to the note**, plus a title attribute:
 
@@ -54,8 +55,9 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
   any site built from these files. They were converted to relative paths when the notes were
   lined up for a static site. **Do not convert them back.**
 - Diagrams the author draws are inline ` ```mermaid ` blocks, not files in `assets/images/`.
-  GitHub renders them natively. Notes `00`–`05` are course screenshots; `06` onward are
-  authored mermaid. New notes should prefer mermaid.
+  GitHub and the site both render them natively, and they need no counter entry.
+  **Prefer mermaid over a screenshot.** Note `00` and notes `06`–`07` are authored mermaid;
+  `01`–`05` are still course screenshots and are being converted one note at a time.
 
 ## Commit conventions
 
