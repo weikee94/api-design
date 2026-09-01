@@ -4,17 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-Personal study notes for the **Grokking API Design** course. It is a notes repository —
-markdown and images only. There is no code, no package manifest, no build, no tests, and
-no linter. Do not go looking for them.
+Personal study notes for the **Grokking API Design** course, published as a static site.
 
-All content lives under `grokking-api-design/`: one markdown file per lesson, plus a single
-flat `assets/images/` directory.
+The notes are the point; the site is a thin wrapper around them. There are no tests and no
+linter — do not go looking for them.
+
+```
+content/            the notes — one markdown file per lesson (the source of truth)
+content/assets/     lesson images, one flat directory
+content/_meta.js    sidebar order and titles
+app/                Next.js App Router — layout, catch-all MDX route, 404
+lib/                remark plugin (see "Site build" below)
+scripts/            sync-assets.mjs, run automatically before dev and build
+public/assets/      GENERATED from content/assets — gitignored, never edit
+```
 
 ## Note file conventions
 
 - Filename: `NN-kebab-case-title.md`, where `NN` is the zero-padded lesson number in course
-  order (`00`–`05` so far). The next note is `06-…`.
+  order (`00`–`07` so far). The next note is `08-…`.
+- Adding a note means adding a line to `content/_meta.js` too, or it will not appear in the
+  sidebar. The `NN` prefix does not order the sidebar on its own.
 - The `# H1` is the lesson title; `##` are the lesson's sections and `###` its subsections.
 - Prose is written as terse lowercase bullets, not full paragraphs. Comparisons, definitions,
   and enumerated properties are markdown tables (`| Type | Example | …`).
@@ -54,12 +64,28 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
 - `feat: <NN> <lesson topic>` — occasionally used instead when the commit covers one lesson.
 - `fix: <what>` — corrections to already-committed notes.
 
+## Site build
+
+Next.js 15 + Nextra 4 (docs theme), deployed on Vercel. `npm run dev` / `npm run build`.
+Node 20+ is required — Next 15 rejects Node 18.
+
+Three things here are load-bearing and not obvious:
+
+- **`overrides: { zod: "4.1.12" }` in `package.json` must stay.** Nextra declares `zod ^4.1.12`,
+  but 4.5.x changed how `z.custom` treats `undefined`, and Nextra's theme strips `children`
+  from its props before validating them against a schema that requires `children`. Every page
+  then fails to render with `expected nonoptional, received undefined`, and a production build
+  hides the message behind a digest. If pages break after a dependency bump, check this first.
+- **`lib/remark-notes.mjs` makes one markdown file correct in two places.** It rewrites
+  `assets/images/…` to `/assets/images/…` at build time, so the notes keep GitHub-correct
+  relative paths while the site gets root-absolute ones. It also drops the trailing
+  `## What changed` section, which is the /polish-note audit trail — kept in the repo so edits
+  stay rejectable, hidden from readers of the site.
+- **`public/assets/` is generated.** `scripts/sync-assets.mjs` copies `content/assets` into it
+  before every dev run and build. Edit `content/assets/`; never `public/assets/`.
+
 ## Planned direction
 
-These notes are being lined up to become a static site on Vercel (Nextra was chosen, so the
-markdown stays the source of truth and interactive React components can be added per page
-later). Two consequences for anything written now:
-
-- image paths must stay relative — see above
-- the 22 course screenshots in `00`–`05` are being replaced with authored mermaid diagrams
-  over time; prefer mermaid when adding or revising a note
+The 22 course screenshots in `00`–`05` are being replaced with authored mermaid diagrams over
+time. Prefer mermaid when adding or revising a note — it renders on GitHub and on the site,
+needs no counter, and is the author's own work.
