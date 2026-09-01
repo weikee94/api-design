@@ -17,6 +17,7 @@ re-read quickly rather than read once.
 | 04 | [Latency and Throughput](grokking-api-design/04-latency-and-throughput.md) | throughput, the four components of latency, ways to reduce it |
 | 05 | [Network Sockets](grokking-api-design/05-network-sockets-as-a-foundation-for-communication.md) | sockets as an interface, concurrent connections, stream vs datagram sockets |
 | 06 | [Important Concepts in Product Architecture](grokking-api-design/06-important-concepts-in-product-architecture.md) | API versioning approaches, evolution strategies, rate limiting, client-adaptive response (Netflix IAC) |
+| 07 | [Data-fetching Patterns](grokking-api-design/07-data-fetching-patterns.md) | short polling and its delay problem, long polling (hanging GET) and its costs |
 
 ## Layout
 
