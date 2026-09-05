@@ -18,6 +18,7 @@ re-read quickly rather than read once.
 | 05 | [Network Sockets](content/05-network-sockets-as-a-foundation-for-communication.md) | sockets as an interface, concurrent connections, stream vs datagram sockets |
 | 06 | [Important Concepts in Product Architecture](content/06-important-concepts-in-product-architecture.md) | API versioning approaches, evolution strategies, rate limiting, client-adaptive response (Netflix IAC) |
 | 07 | [Data-fetching Patterns](content/07-data-fetching-patterns.md) | short polling and its delay problem, long polling (hanging GET) and its costs |
+| 08 | [Product Architecture III](content/08-product-architecture-iii.md) | server-side rendering: what it does, its pro and con, when to use it |
 
 ## Layout
 
