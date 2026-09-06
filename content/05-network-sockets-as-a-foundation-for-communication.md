@@ -6,7 +6,7 @@
 
 - socket is an interface that creates a two way channel between processes communicating on different devices. processes running on the application layer use sockets as an interface to take services from transport layer to establish communication. The interface (IP address + port) is referred ti as a socket address.
 
-![socket](assets/images/018.png "socket")
+![A socket address is an IP address plus a port](assets/images/033.svg "A socket address is an IP address plus a port")
 
 - port numbers ranging between 1-1024 are well-known ports because they mostly used as a standard for particular service. port 80 and 443 are used for HTTP and HTTPS. the transport protocol (TCP or UDP) specified in the transport layer responsible for exchanging data between these processes. 
 
@@ -14,7 +14,7 @@
 
 - multiple processes/services running on one machine and communicating with different processes running on different machine that connected via a network 
 
-![concurrent connections](assets/images/019.png "concurrent connections")
+![One server, four services, four ports](assets/images/034.svg "One server, four services, four ports")
 
 
 ## Categories of network sockets
@@ -35,12 +35,27 @@
 
 - dont create an end-to-end channel between two endpoints to transfer data between processes. It just sends data and expects it to reach the receiver end.
 
-![datagram](assets/images/020.png "datagram")
+![A datagram socket sends and hopes](assets/images/035.svg "A datagram socket sends and hopes")
 
 
 ## The role of sockets in API development
 
-![role of sockets](assets/images/021.png "role of sockets")
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    Note over S: socket() → bind() → listen()
+    Note over C: socket()
+    C->>S: connect()
+    Note over S: accept()
+    Note over C,S: connection established, handed to a process thread
+    C->>S: send()
+    Note over S: recv()
+    S-->>C: send()
+    Note over C: recv()
+    C->>S: close()
+    Note over S: close(), then back to listen() for the next request
+```
 
 | Function | Description |
 | -------- | ----------- |
@@ -61,7 +76,25 @@
 - foregin address: shows the address of the destination socket
 - state: shows the state of the connection
 
-![network statistics](assets/images/022.png "network statistics")
+```
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address       Foreign Address     State        PID/Program name
+tcp        0      0 127.0.0.1:27017     0.0.0.0:*           LISTEN       35/mongod
+tcp        0      0 0.0.0.0:8080        0.0.0.0:*           LISTEN       106/node
+tcp        0      0 0.0.0.0:8890        0.0.0.0:*           LISTEN       7/./server
+tcp        0      0 172.17.0.2:8080     10.128.0.5:37110    ESTABLISHED  106/node
+tcp        0      0 127.0.0.1:27017     127.0.0.1:59620     ESTABLISHED  35/mongod
+tcp        0      0 172.17.0.2:40606    10.128.0.91:8888    TIME_WAIT    -
+tcp        0      0 172.17.0.2:40616    10.128.0.91:8888    TIME_WAIT    -
+tcp        0      0 172.17.0.2:8890     10.128.0.56:38750   TIME_WAIT    -
+tcp        0      0 127.0.0.1:59620     127.0.0.1:27017     ESTABLISHED  38/node
+tcp        0      0 172.17.0.2:8890     10.128.0.5:50498    ESTABLISHED  7/./server
+tcp        0      0 172.17.0.2:40610    10.128.0.91:8888    TIME_WAIT    -
+tcp        0      0 172.17.0.2:8890     10.128.0.56:38800   TIME_WAIT    -
+tcp        0      0 172.17.0.2:8890     10.128.0.5:50512    ESTABLISHED  7/./server
+tcp        0      0 172.17.0.2:40614    10.128.0.91:8888    TIME_WAIT    -
+tcp6       0      0 :::3000             :::*                LISTEN       38/node
+```
 
 - we see that some rows have the IP address, 0.0.0.0 which means that the socket is open for connections through all the device network interfaces
 

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 296" width="720" height="296"
+     role="img" aria-labelledby="t d">
+<title id="t">A datagram socket sends and hopes</title>
+<desc id="d">Two datagram sockets, drawn as dashed lifelines because no end-to-end channel is established between them. Six datagrams are sent. Four arrive. Two are lost partway and nothing retransmits them: the sender never learns, and the receiver never asks. That is the difference from a stream socket, which uses the transport protocol's recovery to retransmit what was lost.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .node{fill:#ffffff;stroke:#c9c9c9}
+  .life{stroke:#c9c9c9} .ok{stroke:#1aa179} .okf{fill:#1aa179}
+  .bad{stroke:#b5746e} .badf{fill:#b5746e}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#c9c9c9}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .node{fill:#0b1220;stroke:#475569}
+    .life{stroke:#475569} .ok{stroke:#34d399} .okf{fill:#34d399}
+    .bad{stroke:#fb7185} .badf{fill:#fb7185}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#475569}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11px;font-weight:600} .m{font-size:10px}
+</style>
+<rect class="bg" width="720" height="296"/>
+<text class="h mut" x="24" y="24">DATAGRAM SOCKET · SEND AND HOPE</text>
+<rect class="node" x="48" y="40" width="160" height="28" rx="6" stroke-width="1"/>
+<text class="n ink" x="128" y="59" text-anchor="middle">Datagram socket 1</text>
+<rect class="node" x="508" y="40" width="160" height="28" rx="6" stroke-width="1"/>
+<text class="n ink" x="588" y="59" text-anchor="middle">Datagram socket 2</text>
+<path class="life" d="M128 68 L128 260" stroke-width="1.2" stroke-dasharray="4 4"/>
+<path class="life" d="M588 68 L588 260" stroke-width="1.2" stroke-dasharray="4 4"/>
+<path class="ok" d="M128 80 L588 80" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="bad" d="M128 112 L336 112" stroke-width="1.4"/>
+<path class="bad" d="M348 105 L362 119 M362 105 L348 119" stroke-width="2"/>
+<text class="m badf" x="392" y="116">lost — nothing retransmits it</text>
+<path class="ok" d="M128 144 L588 144" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="ok" d="M128 176 L588 176" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="bad" d="M128 208 L336 208" stroke-width="1.4"/>
+<path class="bad" d="M348 201 L362 215 M362 201 L348 215" stroke-width="2"/>
+<text class="m badf" x="392" y="212">lost — nothing retransmits it</text>
+<path class="ok" d="M128 240 L588 240" stroke-width="1.4" marker-end="url(#a)"/>
+<text class="m mut" x="24" y="284">no end-to-end channel is set up, so there is nothing to notice a gap — a stream socket over TCP would retransmit</text>
+<defs><marker id="a" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+  <path d="M0,0 L6,3.5 L0,7 Z" fill="context-stroke"/></marker></defs>
+</svg>

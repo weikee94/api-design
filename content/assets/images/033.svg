@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 264" width="720" height="264"
+     role="img" aria-labelledby="t d">
+<title id="t">A socket address is an IP address plus a port</title>
+<desc id="d">Device 1 has the IP address 103.85.131.82 and runs three processes, A on port 60552, B on 63421 and C on 58316. Device 2 has the IP address 104.18.2.119 and runs three processes, X on port 80, Y on 443 and Z on 8080. A two-way channel is open between socket 1, written 103.85.131.82 colon 3000, and socket 2, written 104.18.2.119 colon 80. The IP address picks the device and the port picks the process on it, which is why a socket address needs both.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .dev{fill:none;stroke:#c9c9c9} .proc{fill:#f4faf7;stroke:#1aa179}
+  .sock{fill:#eef4ff;stroke:#0070f3} .sockf{fill:#0070f3} .acc{stroke:#0070f3}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#c9c9c9}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .dev{fill:none;stroke:#475569} .proc{fill:#0b2c31;stroke:#34d399}
+    .sock{fill:#0c2134;stroke:#60a5fa} .sockf{fill:#60a5fa} .acc{stroke:#60a5fa}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#475569}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11px;font-weight:600} .m{font-size:10px} .mono{font-size:10.5px;font-family:ui-monospace,monospace}
+</style>
+<rect class="bg" width="720" height="264"/>
+<text class="h mut" x="24" y="24">SOCKET ADDRESS = IP ADDRESS + PORT</text>
+
+<rect class="dev" x="24" y="48" width="184" height="152" rx="8" stroke-width="1"/>
+<text class="n ink"  x="116" y="68" text-anchor="middle">Device 1</text>
+<text class="mono mut" x="116" y="84" text-anchor="middle">103.85.131.82</text>
+<rect class="proc" x="40" y="96" width="152" height="28" rx="5" stroke-width="1"/>
+<text class="m ink" x="56" y="114">Process A</text><text class="mono mut" x="176" y="114" text-anchor="end">:60552</text>
+<rect class="proc" x="40" y="130" width="152" height="28" rx="5" stroke-width="1"/>
+<text class="m ink" x="56" y="148">Process B</text><text class="mono mut" x="176" y="148" text-anchor="end">:63421</text>
+<rect class="proc" x="40" y="164" width="152" height="28" rx="5" stroke-width="1"/>
+<text class="m ink" x="56" y="182">Process C</text><text class="mono mut" x="176" y="182" text-anchor="end">:58316</text>
+
+<rect class="dev" x="512" y="48" width="184" height="152" rx="8" stroke-width="1"/>
+<text class="n ink"  x="604" y="68" text-anchor="middle">Device 2</text>
+<text class="mono mut" x="604" y="84" text-anchor="middle">104.18.2.119</text>
+<rect class="proc" x="528" y="96" width="152" height="28" rx="5" stroke-width="1"/>
+<text class="m ink" x="544" y="114">Process X</text><text class="mono mut" x="664" y="114" text-anchor="end">:80</text>
+<rect class="proc" x="528" y="130" width="152" height="28" rx="5" stroke-width="1"/>
+<text class="m ink" x="544" y="148">Process Y</text><text class="mono mut" x="664" y="148" text-anchor="end">:443</text>
+<rect class="proc" x="528" y="164" width="152" height="28" rx="5" stroke-width="1"/>
+<text class="m ink" x="544" y="182">Process Z</text><text class="mono mut" x="664" y="182" text-anchor="end">:8080</text>
+
+<rect class="sock" x="232" y="96" width="112" height="40" rx="6" stroke-width="1.4"/>
+<text class="m sockf" x="288" y="112" text-anchor="middle">socket 1</text>
+<text class="mono ink" x="288" y="128" text-anchor="middle">…131.82:3000</text>
+<rect class="sock" x="376" y="96" width="112" height="40" rx="6" stroke-width="1.4"/>
+<text class="m sockf" x="432" y="112" text-anchor="middle">socket 2</text>
+<text class="mono ink" x="432" y="128" text-anchor="middle">…18.2.119:80</text>
+
+<path class="acc" d="M196 110 L228 110" stroke-width="1.3" marker-end="url(#a)"/>
+<path class="acc" d="M348 116 L372 116" stroke-width="1.3" stroke-dasharray="4 3" marker-start="url(#a)" marker-end="url(#a)"/>
+<text class="m sockf" x="360" y="152" text-anchor="middle">two-way channel</text>
+<path class="acc" d="M492 110 L524 110" stroke-width="1.3" marker-end="url(#a)"/>
+
+<line class="line" x1="24" y1="216" x2="696" y2="216" stroke-width="1"/>
+<text class="m mut" x="24" y="240">the IP address picks the device · the port picks the process on it — a socket address needs both</text>
+
+<defs><marker id="a" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto-start-reverse">
+  <path d="M0,0 L6,3.5 L0,7 Z" fill="context-stroke"/></marker></defs>
+</svg>

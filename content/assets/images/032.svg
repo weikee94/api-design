@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 312" width="720" height="312"
+     role="img" aria-labelledby="t d">
+<title id="t">The new narrow waist of the Internet</title>
+<desc id="d">An hourglass. The wide top band holds applications, of which there are many. The wide bottom band holds link technologies: Ethernet, SONET, WiFi and others, of which there are also many. Between them the shape pinches to a narrow waist holding HTTP, TLS, TCP and IP. Anything above can reach anything below only by passing through that thin set, which is why the layer is worth so little churn and so much stability.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff}
+  .glass{fill:#f4f7fb;stroke:#8a8f98} .waist{fill:#eef4ff;stroke:#0070f3} .waistf{fill:#0070f3}
+  .ink{fill:#111111} .mut{fill:#8a8f98}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617}
+    .glass{fill:#0b1220;stroke:#94a3b8} .waist{fill:#0c2134;stroke:#60a5fa} .waistf{fill:#60a5fa}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:12px;font-weight:700} .s{font-size:11px} .m{font-size:10.5px}
+</style>
+<rect class="bg" width="720" height="312"/>
+<text class="h mut" x="24" y="24">THE NEW NARROW WAIST OF THE INTERNET</text>
+
+<path class="glass" d="M200 48 L520 48 L400 136 L320 136 Z" stroke-width="1.4"/>
+<text class="n ink" x="360" y="82"  text-anchor="middle">APPLICATIONS</text>
+<text class="m mut" x="360" y="100" text-anchor="middle">many, and always more</text>
+
+<rect class="waist" x="320" y="136" width="80" height="48" rx="3" stroke-width="1.6"/>
+<text class="s waistf" x="360" y="152" text-anchor="middle">HTTP</text>
+<text class="s waistf" x="360" y="166" text-anchor="middle">TLS · TCP</text>
+<text class="s waistf" x="360" y="180" text-anchor="middle">IP</text>
+
+<path class="glass" d="M320 184 L400 184 L520 272 L200 272 Z" stroke-width="1.4"/>
+<text class="n ink" x="360" y="230" text-anchor="middle">ETHERNET · SONET · WIFI</text>
+<text class="m mut" x="360" y="248" text-anchor="middle">many, and always more</text>
+
+<text class="m waistf" x="536" y="164">everything above reaches</text>
+<text class="m waistf" x="536" y="178">everything below only</text>
+<text class="m waistf" x="536" y="192">through this thin set</text>
+
+<text class="m mut" x="24" y="300">the waist is narrow on purpose — it is the one part that cannot churn without breaking both halves</text>
+</svg>

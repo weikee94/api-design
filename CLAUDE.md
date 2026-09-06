@@ -33,37 +33,47 @@ public/assets/      GENERATED from content/assets — gitignored, never edit
 - **The existing notes contain typos** (`deisgn`, `availale`, `Explnation`, `referred ti as`).
   Leave them alone unless asked — they are the author's text, not a defect to fix in passing.
 
-## Image conventions
+## Figure conventions
 
-This is the part that has caused repeated breakage (see the `fix: image url`, `fix: image path`,
-`fix: image url path` commits), so follow it exactly.
+**Every diagram in this repo is now authored — there are no course screenshots left.** The
+conversion finished across notes `00`–`08`; the last of them went in the `feat: convert notes …`
+commits. Do not reintroduce a screenshot: if a course picture is the source, read it and redraw.
 
-- Images live in `content/assets/images/` and are named with a **globally sequential
-  three-digit counter across the whole course**, not per-lesson. `002`, and now `000` and `001`,
-  are unused gaps — the counter is never renumbered, so gaps only ever grow.
-  **The next image to add is `029`.**
-- Both `.png` and `.svg` are in use; keep the extension the source actually is.
-- Reference them with a **path relative to the note**, plus a title attribute:
+Two forms, and a note may carry both:
+
+- **inline ` ```mermaid ` blocks** — the default. No file, no counter entry, and GitHub and the
+  site both render them natively. Use for sequence, flow, and plain hierarchy (a tree's shape
+  means nothing beyond the tree, so it does not earn a file).
+- **a hand-written `.svg` in `content/assets/images/`** (`/figure`) — worth the extra file only
+  when **position or layout carries meaning mermaid's auto-layout cannot express**: a timeline
+  where one wait is visibly longer, which region of a page re-renders, an hourglass whose
+  narrow middle is the whole argument, headers accumulating as a packet goes down a stack.
+
+SVG file rules:
+
+- Named with a **globally sequential three-digit counter across the whole course**, not
+  per-lesson. `000`–`002` and every converted screenshot's number are now unused gaps — the
+  counter is never renumbered, so gaps only ever grow. **The next image to add is `036`.**
+- Reference with a **path relative to the note**, plus a title attribute:
 
   ```markdown
-  ![Alt text](assets/images/NNN.png "Alt text")
+  ![Alt text](assets/images/NNN.svg "Alt text")
   ```
 
-- These used to be absolute `https://github.com/.../blob/main/...` URLs. Those render on
-  github.com — GitHub's markdown renderer silently rewrites `/blob/` to `/raw/` — but the
-  URL itself serves HTML, so they break everywhere else: local preview, offline editors, and
-  any site built from these files. They were converted to relative paths when the notes were
-  lined up for a static site. **Do not convert them back.**
-- Authored diagrams come in two forms, and a note may carry both:
-  - **inline ` ```mermaid ` blocks** — the default. No counter entry, no file, and both GitHub
-    and the site render them natively. Use these for sequence and flow.
-  - **a hand-written `.svg` in `assets/images/`** (`/figure`) — takes a counter number like any
-    other image. Worth the extra file only when position or layout carries meaning that
-    mermaid's auto-layout cannot express. Note `08` has three alongside its mermaid: the mermaid carries
-    the time axis, `023` the SSR structure, `024` the CSR pipeline, and `025` which region of
-    a page re-renders — that last one is the clearest case, since position is the whole point.
-  **Prefer either over a course screenshot.** Notes `00`–`02`, `04` and `06`–`08` are authored; `03` and `05` are still course
-  screenshots and are being converted one note at a time.
+  These were once absolute `https://github.com/.../blob/main/...` URLs. Those render on
+  github.com — GitHub silently rewrites `/blob/` to `/raw/` — but the URL itself serves HTML,
+  so they break in local preview, in offline editors, and on the site. **Do not convert them
+  back.**
+- Theme-aware from inside the file: a `@media (prefers-color-scheme:dark)` block in the SVG's
+  own `<style>`. **`--force-dark-mode` in headless Chrome does not test this** — it is auto
+  inversion, and a "dark" screenshot taken that way comes back identical to the light one. To
+  check the dark palette, copy the file and promote the media-query rules to the top level.
+- No external requests, no `<script>`, no `<foreignObject>`. `role="img"` with `<title>` as the
+  first child and a `<desc>` that carries the same information as the picture.
+
+A screenshot of a **table** or of **terminal output** is not a diagram — those become a real
+markdown table or a fenced code block. Note `04`'s jitter table and note `05`'s `netstat` output
+were both converted that way.
 
 ## Commit conventions
 
