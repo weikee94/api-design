@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 304" width="720" height="304"
      role="img" aria-labelledby="t d">
 <title id="t">Server-side rendering — the path one page request takes</title>
-<desc id="d">A page request goes to the server, the server builds the complete HTML document, and the populated document arrives so content is visible with no blank page. Every refresh loops back into the same build step and regenerates the whole document. Use it when a fast initial page load is critical and when SEO matters. The note names client-side rendering as the other approach but does not describe it, so that branch is marked as an unfilled gap.</desc>
+<desc id="d">A page request goes to the server, the server builds the complete HTML document, and the populated document arrives so content is visible with no blank page. Every refresh loops back into the same build step and regenerates the whole document. Use it when a fast initial page load is critical and when SEO matters. Client-side rendering, the other approach, is covered in its own figures.</desc>
 <style>
   :root{color-scheme:light dark}
   .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#eaeaea}
   .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#c9c9c9}
   .acc{stroke:#0070f3} .accf{fill:#0070f3} .accbg{fill:#eef4ff;stroke:#0070f3}
-  .gap{stroke:#e0a040} .gapf{fill:#e0a040} .gapbg{fill:#fdf6e8;stroke:#e0a040}
   @media (prefers-color-scheme:dark){
     .bg{fill:#020617} .card{fill:#0b1220;stroke:#1e293b}
     .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#475569}
     .acc{stroke:#60a5fa} .accf{fill:#60a5fa} .accbg{fill:#0c2134;stroke:#60a5fa}
-    .gap{stroke:#fbbf24} .gapf{fill:#fbbf24} .gapbg{fill:#2e2022;stroke:#fbbf24}
   }
   text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
   .h{font-size:11px;font-weight:600;letter-spacing:.08em}
@@ -39,11 +37,6 @@
 <path class="acc" d="M564 120 L564 164 Q564 172 556 172 L320 172 Q312 172 312 164 L312 128"
       stroke-width="1.4" fill="none" stroke-dasharray="4 4" marker-end="url(#a)"/>
 <text class="m accf" x="440" y="190" text-anchor="middle">refresh = the whole document is regenerated and sent again</text>
-
-<rect class="gapbg" x="24" y="136" width="152" height="48" rx="8" stroke-width="1.2" stroke-dasharray="4 4"/>
-<text class="s ink" x="100" y="156" text-anchor="middle">client-side rendering</text>
-<text class="m gapf" x="100" y="172" text-anchor="middle">〔note does not say〕</text>
-<path class="gap" d="M100 124 L100 132" stroke-width="1.2" stroke-dasharray="3 3"/>
 
 <line class="card" x1="24" y1="212" x2="696" y2="212" stroke-width="1"/>
 <text class="h mut" x="24" y="240">WHEN TO USE</text>

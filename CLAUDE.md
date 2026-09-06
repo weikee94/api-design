@@ -41,7 +41,7 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
 - Images live in `content/assets/images/` and are named with a **globally sequential
   three-digit counter across the whole course**, not per-lesson. `002`, and now `000` and `001`,
   are unused gaps — the counter is never renumbered, so gaps only ever grow.
-  **The next image to add is `024`.**
+  **The next image to add is `026`.**
 - Both `.png` and `.svg` are in use; keep the extension the source actually is.
 - Reference them with a **path relative to the note**, plus a title attribute:
 
@@ -59,8 +59,9 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
     and the site render them natively. Use these for sequence and flow.
   - **a hand-written `.svg` in `assets/images/`** (`/figure`) — takes a counter number like any
     other image. Worth the extra file only when position or layout carries meaning that
-    mermaid's auto-layout cannot express. Note `08` has one alongside its mermaid: the mermaid
-    carries the time axis, the SVG carries the structure and marks a gap in the source summary.
+    mermaid's auto-layout cannot express. Note `08` has three alongside its mermaid: the mermaid carries
+    the time axis, `023` the SSR structure, `024` the CSR pipeline, and `025` which region of
+    a page re-renders — that last one is the clearest case, since position is the whole point.
   **Prefer either over a course screenshot.** Note `00` and `06`–`08` are authored;
   `01`–`05` are still course screenshots and are being converted one note at a time.
 
