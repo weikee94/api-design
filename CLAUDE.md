@@ -41,7 +41,7 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
 - Images live in `content/assets/images/` and are named with a **globally sequential
   three-digit counter across the whole course**, not per-lesson. `002`, and now `000` and `001`,
   are unused gaps — the counter is never renumbered, so gaps only ever grow.
-  **The next image to add is `023`** — but prefer a mermaid diagram, see below.
+  **The next image to add is `024`.**
 - Both `.png` and `.svg` are in use; keep the extension the source actually is.
 - Reference them with a **path relative to the note**, plus a title attribute:
 
@@ -54,9 +54,14 @@ This is the part that has caused repeated breakage (see the `fix: image url`, `f
   URL itself serves HTML, so they break everywhere else: local preview, offline editors, and
   any site built from these files. They were converted to relative paths when the notes were
   lined up for a static site. **Do not convert them back.**
-- Diagrams the author draws are inline ` ```mermaid ` blocks, not files in `assets/images/`.
-  GitHub and the site both render them natively, and they need no counter entry.
-  **Prefer mermaid over a screenshot.** Note `00` and notes `06`–`07` are authored mermaid;
+- Authored diagrams come in two forms, and a note may carry both:
+  - **inline ` ```mermaid ` blocks** — the default. No counter entry, no file, and both GitHub
+    and the site render them natively. Use these for sequence and flow.
+  - **a hand-written `.svg` in `assets/images/`** (`/figure`) — takes a counter number like any
+    other image. Worth the extra file only when position or layout carries meaning that
+    mermaid's auto-layout cannot express. Note `08` has one alongside its mermaid: the mermaid
+    carries the time axis, the SVG carries the structure and marks a gap in the source summary.
+  **Prefer either over a course screenshot.** Note `00` and `06`–`08` are authored;
   `01`–`05` are still course screenshots and are being converted one note at a time.
 
 ## Commit conventions
