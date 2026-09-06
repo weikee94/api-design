@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 272" width="720" height="272"
+     role="img" aria-labelledby="t d">
+<title id="t">The four delays that add up to latency, each at the point where it happens</title>
+<desc id="d">A packet travels from the client through two routers to the server. Transmission delay happens at the sender, pushing the packet onto the link, and equals packet size divided by bandwidth. Propagation delay is the time spent on the wire across the whole transmission media, and equals distance divided by speed. Queuing delay happens at a node, where the packet waits before it can be processed. Processing delay happens at a node and at the end host, doing the work on the packet. Latency is the sum of all four.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#eaeaea}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#c9c9c9}
+  .t1{stroke:#0070f3} .t1f{fill:#0070f3}
+  .t2{stroke:#1aa179} .t2f{fill:#1aa179}
+  .t3{stroke:#e0a040} .t3f{fill:#e0a040}
+  .t4{stroke:#7c3aed} .t4f{fill:#7c3aed}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#1e293b}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#475569}
+    .t1{stroke:#60a5fa} .t1f{fill:#60a5fa}
+    .t2{stroke:#34d399} .t2f{fill:#34d399}
+    .t3{stroke:#fbbf24} .t3f{fill:#fbbf24}
+    .t4{stroke:#a78bfa} .t4f{fill:#a78bfa}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11.5px;font-weight:600} .s{font-size:11px} .m{font-size:10px}
+  .lbl{font-size:10.5px;font-weight:700}
+</style>
+<rect class="bg" width="720" height="272"/>
+<text class="h mut" x="24" y="28">LATENCY · WHERE EACH DELAY HAPPENS</text>
+
+<!-- the four labels, each above the point it occurs -->
+<text class="lbl t1f" x="136" y="60" text-anchor="middle">transmission</text>
+<text class="m t1f"   x="136" y="74" text-anchor="middle">packetSize / bandwidth</text>
+<text class="lbl t3f" x="268" y="60" text-anchor="middle">queuing</text>
+<text class="m t3f"   x="268" y="74" text-anchor="middle">waits its turn</text>
+<text class="lbl t4f" x="444" y="60" text-anchor="middle">processing</text>
+<text class="m t4f"   x="444" y="74" text-anchor="middle">node does the work</text>
+
+<path class="t1" d="M104 84 L104 92 M168 84 L168 92 M104 84 L168 84" stroke-width="1.4" fill="none"/>
+<path class="t3" d="M240 84 L240 92 M296 84 L296 92 M240 84 L296 84" stroke-width="1.4" fill="none"/>
+<path class="t4" d="M416 84 L416 92 M472 84 L472 92 M416 84 L472 84" stroke-width="1.4" fill="none"/>
+
+<!-- the path -->
+<rect class="card" x="24"  y="96" width="80" height="44" rx="8" stroke-width="1"/>
+<text class="n ink" x="64"  y="123" text-anchor="middle">Client</text>
+<rect class="card" x="232" y="96" width="72" height="44" rx="8" stroke-width="1"/>
+<text class="n ink" x="268" y="123" text-anchor="middle">Router</text>
+<rect class="card" x="408" y="96" width="72" height="44" rx="8" stroke-width="1"/>
+<text class="n ink" x="444" y="123" text-anchor="middle">Router</text>
+<rect class="card" x="608" y="96" width="88" height="44" rx="8" stroke-width="1"/>
+<text class="n ink" x="652" y="123" text-anchor="middle">Server</text>
+
+<path class="line" d="M108 118 L228 118" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="line" d="M308 118 L404 118" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="line" d="M484 118 L604 118" stroke-width="1.4" marker-end="url(#a)"/>
+
+<!-- propagation spans the whole media, so its bracket does too -->
+<path class="t2" d="M104 156 L104 148 M608 156 L608 148 M104 156 L608 156" stroke-width="1.4" fill="none"/>
+<text class="lbl t2f" x="356" y="174" text-anchor="middle">propagation — time on the wire, across the whole transmission media</text>
+<text class="m t2f"   x="356" y="188" text-anchor="middle">distance / speed</text>
+
+<!-- the formula, colour-matched to the markers above -->
+<line class="card" x1="24" y1="216" x2="696" y2="216" stroke-width="1"/>
+<text class="s ink"  x="24"  y="248">latency</text>
+<text class="s mut"  x="72"  y="248">=</text>
+<text class="s t1f"  x="88"  y="248">transmission</text>
+<text class="s mut"  x="164" y="248">+</text>
+<text class="s t2f"  x="180" y="248">propagation</text>
+<text class="s mut"  x="252" y="248">+</text>
+<text class="s t3f"  x="268" y="248">queuing</text>
+<text class="s mut"  x="320" y="248">+</text>
+<text class="s t4f"  x="336" y="248">processing</text>
+
+<defs>
+  <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker>
+</defs>
+</svg>

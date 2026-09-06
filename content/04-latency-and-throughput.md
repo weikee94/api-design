@@ -4,42 +4,33 @@ Knowing what constitutes the latency and throughput enhances our understanding h
 ## Throughput
 - refers to the data rate that passes through many network hops. if we have a 1Mbps effective throughput we cant sent more than 1Mb of data in a second.
 
-
-![throughput](assets/images/010.png "throughput")
-
 ## Latency
 - refers to a user-level message takes to travel from the sender to the receiver. we often more concerned about the user-perceived delay, which is a function of the round trip time(RTT).
 - latency = transmission delay + propagation delay + queuing delay + switch/node processing delay
 
-### Transmission Delay
+![The four delays that add up to latency](assets/images/026.svg "The four delays that add up to latency")
 
-![transmission](assets/images/011.png "transmission")
+### Transmission Delay
 
 - transmission delay = packetSize / bandwidth
 - size of packet and transmission media capacity affect the transmission delay, sending the compressed data over the network helps to reduce data size
 
 ### Propagation delay
 
-![propagation](assets/images/012.png "propagation")
-
 - propagation delay = distance / speed
 
 ### Queuing delay
-
-![queuing](assets/images/013.png "queuing")
 
 - refer to the time needed for a node to hold the packet before it can be proceed. 
 - queuing delays depends on multiple factors, such as: the time interval between the packets, transmission capacity of the outgoing link, current congestion conditions at the routes
 
 ### Processing delay
 
-![processing](assets/images/014.png "processing")
-
 - refer the time the node(routers) and end hosts(server) take to process the packet (depends on the processing speed of the nodes and end host)
 
 ## Jitter
 
-![jitter](assets/images/015.png "jitter")
+![Jitter — the delay changes from one packet to the next](assets/images/027.svg "Jitter — the delay changes from one packet to the next")
 
 - refer to the latency changes from one packet to the next (网路抖动), such as queuing delays, changes in the route and so on.
 
@@ -47,7 +38,14 @@ Knowing what constitutes the latency and throughput enhances our understanding h
 ping -c 5 educative.io
 ```
 
-![jitter calculation](assets/images/016.png "jitter calculation")
+| Packet | Time (t₁) | Time (t₂) | Delay difference \|t₁−t₂\| |
+| ------ | --------- | --------- | -------------------------- |
+| 1 and 2 | 11.0 ms | 10.3 ms | 0.7 ms |
+| 2 and 3 | 10.3 ms | 10.3 ms | 0 ms |
+| 3 and 4 | 10.3 ms | 10.3 ms | 0 ms |
+| 4 and 5 | 10.3 ms | 10.2 ms | 0.1 ms |
+
+The jitter is the mean of the delay differences: (0.7 + 0 + 0 + 0.1) / 4 = **0.2 ms**
 
 
 ## Latency-bandwidth product and network utilization
@@ -63,7 +61,18 @@ latency * bandwidth = 200 * 1000 bits = 200 kbits
 - application can be divide into different classes on the basis of delay, such as elastic and real time applications. Elastic applications can tolerate the delay and real-time application cannot tolerate substantial delay.
 
 
-![application classes](assets/images/017.png "application classes")
+```mermaid
+flowchart TD
+    A[Application] --> E[Elastic]
+    A --> R[Real time]
+    E --> E1[Interactive]
+    E --> E2[Interactive bulk]
+    E --> E3[Asynchronous]
+    R --> R1[Hard / intolerant]
+    R --> R2[Soft / tolerant]
+    R2 --> S1[Adaptive]
+    R2 --> S2[Non-adaptive]
+```
 
 ### Type of elastic applications
 

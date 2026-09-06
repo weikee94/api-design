@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 264" width="720" height="264"
+     role="img" aria-labelledby="t d">
+<title id="t">Jitter — the latency changes from one packet to the next</title>
+<desc id="d">Packets leave the sender evenly spaced. On the first three, the delay is equal, so they arrive evenly spaced too. On the later packets the delay increases, so the gaps between arrivals stretch and become uneven. Jitter is that change in latency from one packet to the next, caused by things like queuing delays and changes in the route. The figure shows the same packets on a send row and a receive row so the spacing can be compared directly.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#eaeaea}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#c9c9c9}
+  .pk{fill:#eef4ff;stroke:#0070f3} .ok{fill:#1aa179} .okl{stroke:#1aa179}
+  .bad{fill:#b5746e} .badl{stroke:#b5746e} .badpk{fill:#f6ecea;stroke:#b5746e}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#1e293b}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#475569}
+    .pk{fill:#0c2134;stroke:#60a5fa} .ok{fill:#34d399} .okl{stroke:#34d399}
+    .bad{fill:#fb7185} .badl{stroke:#fb7185} .badpk{fill:#3f152f;stroke:#fb7185}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .s{font-size:11px} .m{font-size:10px} .lbl{font-size:10.5px;font-weight:700}
+</style>
+<rect class="bg" width="720" height="264"/>
+<text class="h mut" x="24" y="28">JITTER · THE DELAY CHANGES FROM ONE PACKET TO THE NEXT</text>
+
+<text class="s mut" x="24" y="70">sent</text>
+<line class="line" x1="88" y1="64" x2="696" y2="64" stroke-width="1"/>
+<rect class="pk" x="112" y="52" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="pk" x="208" y="52" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="pk" x="304" y="52" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="pk" x="400" y="52" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="pk" x="496" y="52" width="20" height="24" rx="3" stroke-width="1"/>
+<text class="m mut" x="356" y="94" text-anchor="middle">evenly spaced leaving the sender</text>
+
+<path class="line" d="M122 108 L122 140" stroke-width="1.2" marker-end="url(#a)"/>
+<path class="line" d="M218 108 L226 140" stroke-width="1.2" marker-end="url(#a)"/>
+<path class="line" d="M314 108 L330 140" stroke-width="1.2" marker-end="url(#a)"/>
+<path class="badl" d="M410 108 L458 140" stroke-width="1.2" marker-end="url(#a)"/>
+<path class="badl" d="M506 108 L594 140" stroke-width="1.2" marker-end="url(#a)"/>
+
+<text class="s mut" x="24" y="164">arrived</text>
+<line class="line" x1="88" y1="156" x2="696" y2="156" stroke-width="1"/>
+<rect class="pk"    x="112" y="144" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="pk"    x="216" y="144" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="pk"    x="320" y="144" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="badpk" x="448" y="144" width="20" height="24" rx="3" stroke-width="1"/>
+<rect class="badpk" x="584" y="144" width="20" height="24" rx="3" stroke-width="1"/>
+
+<path class="okl" d="M132 188 L216 188" stroke-width="1.2"/>
+<path class="okl" d="M236 188 L320 188" stroke-width="1.2"/>
+<text class="lbl ok" x="226" y="206" text-anchor="middle">equal delay — gaps unchanged</text>
+<path class="badl" d="M340 188 L448 188" stroke-width="1.2" stroke-dasharray="4 3"/>
+<path class="badl" d="M468 188 L584 188" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text class="lbl bad" x="470" y="206" text-anchor="middle">delay increases — gaps stretch</text>
+
+<line class="card" x1="24" y1="226" x2="696" y2="226" stroke-width="1"/>
+<text class="m mut" x="24" y="250">jitter = the change in latency between consecutive packets · caused by queuing delays, route changes and so on</text>
+
+<defs>
+  <marker id="a" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+    <path d="M0,0 L6,3.5 L0,7 Z" fill="context-stroke"/></marker>
+</defs>
+</svg>
