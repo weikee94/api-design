@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 264" width="720" height="264"
+     role="img" aria-labelledby="t d">
+<title id="t">The API lifecycle, with the API design lifecycle as a loop inside it</title>
+<desc id="d">The API lifecycle runs from Requirements through Design, Develop, Deploy and Publish to Use. The API design lifecycle is a loop drawn on top of it: from Use to Analyze to Update and back into Design, so design is re-entered rather than finished once. A separate shortcut runs from Design straight to Use, labelled Prototype. Two colours separate the two lifecycles.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#c9c9c9}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#8a8f98}
+  .acc{stroke:#0070f3} .accf{fill:#0070f3} .accbg{fill:#eef4ff;stroke:#0070f3}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#475569}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#94a3b8}
+    .acc{stroke:#60a5fa} .accf{fill:#60a5fa} .accbg{fill:#0c2134;stroke:#60a5fa}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11.5px;font-weight:600} .m{font-size:10.5px}
+</style>
+<rect class="bg" width="720" height="264"/>
+<text class="h mut" x="24" y="24">API LIFECYCLE · AND THE DESIGN LOOP INSIDE IT</text>
+
+<path class="acc" d="M192 84 Q192 48 240 48 L592 48 Q640 48 640 84" fill="none"
+      stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#b)"/>
+<text class="m accf" x="416" y="42" text-anchor="middle">Prototype — straight from Design to Use</text>
+
+<rect class="card" x="32"  y="88" width="96" height="48" rx="8" stroke-width="1"/>
+<text class="n ink" x="80"  y="117" text-anchor="middle">Requirements</text>
+<rect class="card" x="144" y="88" width="96" height="48" rx="8" stroke-width="1"/>
+<text class="n ink" x="192" y="117" text-anchor="middle">Design</text>
+<rect class="card" x="256" y="88" width="96" height="48" rx="8" stroke-width="1"/>
+<text class="n ink" x="304" y="117" text-anchor="middle">Develop</text>
+<rect class="card" x="368" y="88" width="96" height="48" rx="8" stroke-width="1"/>
+<text class="n ink" x="416" y="117" text-anchor="middle">Deploy</text>
+<rect class="card" x="480" y="88" width="96" height="48" rx="8" stroke-width="1"/>
+<text class="n ink" x="528" y="117" text-anchor="middle">Publish</text>
+<rect class="card" x="592" y="88" width="96" height="48" rx="8" stroke-width="1"/>
+<text class="n ink" x="640" y="117" text-anchor="middle">Use</text>
+
+<path class="line" d="M132 112 L140 112" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="line" d="M244 112 L252 112" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="line" d="M356 112 L364 112" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="line" d="M468 112 L476 112" stroke-width="1.4" marker-end="url(#a)"/>
+<path class="line" d="M580 112 L588 112" stroke-width="1.4" marker-end="url(#a)"/>
+
+<path class="acc" d="M640 136 L640 176 L584 176" stroke-width="1.4" fill="none" marker-end="url(#b)"/>
+<rect class="accbg" x="472" y="176" width="112" height="44" rx="8" stroke-width="1.4" transform="translate(0,-22)"/>
+<text class="n ink" x="528" y="181" text-anchor="middle">Analyze</text>
+<path class="acc" d="M472 176 L416 176" stroke-width="1.4" marker-end="url(#b)"/>
+<rect class="accbg" x="304" y="176" width="112" height="44" rx="8" stroke-width="1.4" transform="translate(0,-22)"/>
+<text class="n ink" x="360" y="181" text-anchor="middle">Update</text>
+<path class="acc" d="M304 176 L192 176 L192 140" stroke-width="1.4" fill="none" marker-end="url(#b)"/>
+<text class="m accf" x="228" y="204" text-anchor="middle">back into Design</text>
+
+<circle class="line" cx="30" cy="236" r="4" fill="none" stroke-width="6"/>
+<text class="m mut" x="44" y="240">API lifecycle</text>
+<circle class="accf" cx="176" cy="236" r="4"/>
+<text class="m accf" x="190" y="240">API design lifecycle — design is re-entered, not finished once</text>
+
+<defs>
+  <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker>
+  <marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker>
+</defs>
+</svg>

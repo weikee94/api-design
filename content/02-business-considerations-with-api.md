@@ -8,7 +8,17 @@
 - automation
 
 ## API monetization models
-![API Monetization Models](assets/images/005.png "API Monetization Models")
+```mermaid
+flowchart LR
+    M[Monetization models] --> F[Free]
+    M --> DP[Developer pays]
+    M --> DG[Developer gets paid]
+    DP --> S[Subscription]
+    DP --> P[Pay-as-you-go]
+    DP --> T[Transaction fees]
+    DG --> A[Adverts]
+    DG --> AF[Affiliate]
+```
 
 ## Performance Measures
 - tools that with metrics that drive business decisions: SLIs, SLOs, SLAs

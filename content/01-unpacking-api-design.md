@@ -1,14 +1,15 @@
 # Unpacking API Design
 
 ## API deisgn lifecycle
-![API Development Cycle](assets/images/003.svg "API Development Cycle")
+![The API lifecycle, with the design loop inside it](assets/images/028.svg "The API lifecycle, with the design loop inside it")
 
 ## The design-first vs code-first approach
 - code-first approach: development of the code starts after the business requirement are laid out
 - design-first approach: focus on creating API's contract or specification document before writing any code
 
 ## API design considerations
-![API design considerations](assets/images/004.svg "API design considerations")
+
+Six considerations: user identification, problem identification, response type identification, use-case implementation, scalability, and documentation.
 
 - define the level of access and type of authentication to be implemented in the API
 - identify the responses (successes or errors) to different API calls, exception and error handling must be implemented along with well-defined endpoints of the API
