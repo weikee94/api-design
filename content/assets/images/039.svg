@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="720" height="240" role="img" aria-labelledby="t d">
+<title id="t">Prefetch — the fetch moves to before the click</title>
+<desc id="d">Two rows on the same time axis, aligned on the moment the user clicks. Without prefetch, the user stays on the current page, clicks, and only then does the request fire, so there is a wait before the resource is shown. With prefetch, the resource is fetched into the browser cache while the user is still on the current page, so after the click it is shown from the cache with no wait.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#c9c9c9}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#9aa0a8}
+  .acc{stroke:#0070f3} .accf{fill:#0070f3} .accbg{fill:#eef4ff;stroke:#0070f3}
+  .ok{stroke:#1aa179} .okf{fill:#128a66} .okbg{fill:#e8f7f2;stroke:#1aa179}
+  .amb{stroke:#e0a040} .ambf{fill:#b87410} .ambbg{fill:#fdf6e8;stroke:#e0a040}
+  .bad{stroke:#b5746e} .badf{fill:#a35d57} .badbg{fill:#f6ecea;stroke:#b5746e}
+  .vio{stroke:#7c3aed} .viof{fill:#7c3aed} .viobg{fill:#f3eefe;stroke:#7c3aed}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#475569}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#64748b}
+    .acc{stroke:#60a5fa} .accf{fill:#60a5fa} .accbg{fill:#0c2134;stroke:#60a5fa}
+    .ok{stroke:#34d399} .okf{fill:#34d399} .okbg{fill:#0b2c31;stroke:#34d399}
+    .amb{stroke:#fbbf24} .ambf{fill:#fbbf24} .ambbg{fill:#2e2022;stroke:#fbbf24}
+    .bad{stroke:#fb7185} .badf{fill:#fb7185} .badbg{fill:#3f152f;stroke:#fb7185}
+    .vio{stroke:#a78bfa} .viof{fill:#a78bfa} .viobg{fill:#1e1638;stroke:#a78bfa}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11.5px;font-weight:600} .s{font-size:11px} .m{font-size:10px}
+</style>
+<rect class="bg" width="720" height="240"/>
+<text class="h mut" x="24" y="24">PREFETCH · THE FETCH MOVES TO BEFORE THE CLICK</text>
+<path class="line" d="M400 52 L400 196" stroke-width="1.2" stroke-dasharray="4 4"/><text class="m ink" x="400" y="46" text-anchor="middle">user clicks</text>
+<text class="s ink" x="24" y="88">without</text>
+<rect class="card" x="128" y="68" width="268" height="32" rx="5" stroke-width="1"/><text class="m mut" x="138" y="88">on the current page</text>
+<rect class="ambbg" x="404" y="68" width="140" height="32" rx="5" stroke-width="1.2"/><text class="m ambf" x="474" y="88" text-anchor="middle">request fires · wait</text>
+<rect class="okbg" x="548" y="68" width="148" height="32" rx="5" stroke-width="1.2"/><text class="m okf" x="622" y="88" text-anchor="middle">shown</text>
+<text class="s ink" x="24" y="168">with prefetch</text>
+<rect class="card" x="128" y="148" width="268" height="32" rx="5" stroke-width="1"/><text class="m mut" x="138" y="168">on the current page</text>
+<rect class="accbg" x="236" y="154" width="152" height="20" rx="4" stroke-width="1.2"/><text class="m accf" x="312" y="168" text-anchor="middle">fetched into cache</text>
+<rect class="okbg" x="404" y="148" width="292" height="32" rx="5" stroke-width="1.2"/><text class="m okf" x="550" y="168" text-anchor="middle">shown from cache — no wait</text>
+<text class="m mut" x="24" y="228">prefetch is for what might be needed later — the wait happens while the user is still on the current page</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker></defs>
+</svg>

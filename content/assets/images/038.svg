@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 272" width="720" height="272" role="img" aria-labelledby="t d">
+<title id="t">Shandian — one page, split into two states, sent at two times</title>
+<desc id="d">A proxy server takes the web page and splits it into two states. The load time state holds the objects needed at the initial load; it is serialized as JSON and sent to the client first, where a modified JSON lexer reads it instead of the HTML parser. The post load state holds the objects needed afterwards, such as the remaining JavaScript and unmodified CDN data; it is migrated to the client later, in the background. The first state gets the page on screen early and the second follows without the user waiting for it.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#c9c9c9}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#9aa0a8}
+  .acc{stroke:#0070f3} .accf{fill:#0070f3} .accbg{fill:#eef4ff;stroke:#0070f3}
+  .ok{stroke:#1aa179} .okf{fill:#128a66} .okbg{fill:#e8f7f2;stroke:#1aa179}
+  .amb{stroke:#e0a040} .ambf{fill:#b87410} .ambbg{fill:#fdf6e8;stroke:#e0a040}
+  .bad{stroke:#b5746e} .badf{fill:#a35d57} .badbg{fill:#f6ecea;stroke:#b5746e}
+  .vio{stroke:#7c3aed} .viof{fill:#7c3aed} .viobg{fill:#f3eefe;stroke:#7c3aed}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#475569}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#64748b}
+    .acc{stroke:#60a5fa} .accf{fill:#60a5fa} .accbg{fill:#0c2134;stroke:#60a5fa}
+    .ok{stroke:#34d399} .okf{fill:#34d399} .okbg{fill:#0b2c31;stroke:#34d399}
+    .amb{stroke:#fbbf24} .ambf{fill:#fbbf24} .ambbg{fill:#2e2022;stroke:#fbbf24}
+    .bad{stroke:#fb7185} .badf{fill:#fb7185} .badbg{fill:#3f152f;stroke:#fb7185}
+    .vio{stroke:#a78bfa} .viof{fill:#a78bfa} .viobg{fill:#1e1638;stroke:#a78bfa}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11.5px;font-weight:600} .s{font-size:11px} .m{font-size:10px}
+</style>
+<rect class="bg" width="720" height="272"/>
+<text class="h mut" x="24" y="24">SHANDIAN · ONE PAGE, TWO STATES, SENT AT TWO TIMES</text>
+<rect class="card" x="24" y="112" width="116" height="48" rx="8" stroke-width="1.2"/><text class="n ink" x="82" y="133" text-anchor="middle">Web page</text><text class="m mut" x="82" y="149" text-anchor="middle">as built</text>
+<path class="line" d="M142 136 L172 136" stroke-width="1.3" marker-end="url(#a)"/>
+<rect class="card" x="176" y="104" width="132" height="64" rx="8" stroke-width="1.2"/><text class="n ink" x="242" y="132" text-anchor="middle">Proxy server</text><text class="m mut" x="242" y="148" text-anchor="middle">splits the page</text>
+<path class="acc" d="M308 124 L324 124 L324 76 L338 76" fill="none" stroke-width="1.3" marker-end="url(#a)"/>
+<path class="vio" d="M308 148 L324 148 L324 196 L338 196" fill="none" stroke-width="1.3" marker-end="url(#a)"/>
+<rect class="accbg" x="344" y="52" width="156" height="48" rx="8" stroke-width="1.4"/><text class="n ink" x="422" y="73" text-anchor="middle">Load time state</text><text class="m accf" x="422" y="89" text-anchor="middle">needed at initial load</text>
+<path class="acc" d="M502 76 L538 76" stroke-width="1.3" marker-end="url(#a)"/><text class="m accf" x="520" y="68" text-anchor="middle">JSON</text>
+<rect class="accbg" x="544" y="52" width="160" height="48" rx="8" stroke-width="1.4"/><text class="n ink" x="624" y="73" text-anchor="middle">Client — first</text><text class="m accf" x="624" y="89" text-anchor="middle">JSON lexer, not HTML parser</text>
+<rect class="viobg" x="344" y="172" width="156" height="48" rx="8" stroke-width="1.4"/><text class="n ink" x="422" y="193" text-anchor="middle">Post load state</text><text class="m viof" x="422" y="209" text-anchor="middle">remaining JS · CDN data</text>
+<path class="vio" d="M502 196 L538 196" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#a)"/><text class="m viof" x="520" y="188" text-anchor="middle">later</text>
+<rect class="viobg" x="544" y="172" width="160" height="48" rx="8" stroke-width="1.4"/><text class="n ink" x="624" y="193" text-anchor="middle">Client — later</text><text class="m viof" x="624" y="209" text-anchor="middle">migrated in the background</text>
+<text class="m mut" x="24" y="256">the load time state gets the page on screen early · the post load state follows in the background</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker></defs>
+</svg>

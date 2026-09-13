@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="720" height="320" role="img" aria-labelledby="t d">
+<title id="t">Circuit breaker — three states</title>
+<desc id="d">In the closed state all requests pass through to the service and failures are counted. When failures exceed the threshold the breaker trips to open: every request is rejected at once without reaching the service, which gets time to recover. When the timeout expires it moves to half-open, where a limited number of requests pass as a test. If all of them succeed it returns to closed; if any one fails it goes back to open and the timeout restarts. The breaker's own rejections are not counted as failures.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#c9c9c9}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#9aa0a8}
+  .acc{stroke:#0070f3} .accf{fill:#0070f3} .accbg{fill:#eef4ff;stroke:#0070f3}
+  .ok{stroke:#1aa179} .okf{fill:#128a66} .okbg{fill:#e8f7f2;stroke:#1aa179}
+  .amb{stroke:#e0a040} .ambf{fill:#b87410} .ambbg{fill:#fdf6e8;stroke:#e0a040}
+  .bad{stroke:#b5746e} .badf{fill:#a35d57} .badbg{fill:#f6ecea;stroke:#b5746e}
+  .vio{stroke:#7c3aed} .viof{fill:#7c3aed} .viobg{fill:#f3eefe;stroke:#7c3aed}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#475569}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#64748b}
+    .acc{stroke:#60a5fa} .accf{fill:#60a5fa} .accbg{fill:#0c2134;stroke:#60a5fa}
+    .ok{stroke:#34d399} .okf{fill:#34d399} .okbg{fill:#0b2c31;stroke:#34d399}
+    .amb{stroke:#fbbf24} .ambf{fill:#fbbf24} .ambbg{fill:#2e2022;stroke:#fbbf24}
+    .bad{stroke:#fb7185} .badf{fill:#fb7185} .badbg{fill:#3f152f;stroke:#fb7185}
+    .vio{stroke:#a78bfa} .viof{fill:#a78bfa} .viobg{fill:#1e1638;stroke:#a78bfa}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11.5px;font-weight:600} .s{font-size:11px} .m{font-size:10px}
+</style>
+<rect class="bg" width="720" height="320"/>
+<text class="h mut" x="24" y="24">CIRCUIT BREAKER · THREE STATES</text>
+<rect class="okbg" x="24" y="56" width="184" height="72" rx="12" stroke-width="1.4"/><text class="n ink" x="116" y="82" text-anchor="middle">Closed</text><text class="m okf" x="116" y="100" text-anchor="middle">all requests pass</text><text class="m okf" x="116" y="114" text-anchor="middle">failures are counted</text>
+<rect class="badbg" x="512" y="56" width="184" height="72" rx="12" stroke-width="1.4"/><text class="n ink" x="604" y="82" text-anchor="middle">Open</text><text class="m badf" x="604" y="100" text-anchor="middle">all rejected at once</text><text class="m badf" x="604" y="114" text-anchor="middle">service gets time to recover</text>
+<rect class="ambbg" x="268" y="208" width="184" height="72" rx="12" stroke-width="1.4"/><text class="n ink" x="360" y="234" text-anchor="middle">Half-open</text><text class="m ambf" x="360" y="252" text-anchor="middle">a limited number pass</text><text class="m ambf" x="360" y="266" text-anchor="middle">as a test</text>
+<path class="bad" d="M212 84 L506 84" stroke-width="1.4" marker-end="url(#a)"/><text class="m badf" x="360" y="76" text-anchor="middle">failures exceed the threshold — trips</text>
+<path class="amb" d="M580 128 L580 232 L458 232" fill="none" stroke-width="1.4" marker-end="url(#a)"/><text class="m ambf" x="518" y="224" text-anchor="middle">timeout expires</text>
+<path class="bad" d="M452 256 L636 256 L636 134" fill="none" stroke-width="1.4" marker-end="url(#a)"/><text class="m badf" x="544" y="272" text-anchor="middle">any test fails · timeout restarts</text>
+<path class="ok" d="M264 244 L116 244 L116 134" fill="none" stroke-width="1.4" marker-end="url(#a)"/><text class="m okf" x="190" y="236" text-anchor="middle">all tests succeed</text>
+<text class="m mut" x="24" y="308">fail fast, recover ASAP · the breaker&#8217;s own rejections are not counted as failures</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker></defs>
+</svg>

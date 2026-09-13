@@ -22,7 +22,7 @@ public/assets/      GENERATED from content/assets — gitignored, never edit
 ## Note file conventions
 
 - Filename: `NN-kebab-case-title.md`, where `NN` is the zero-padded lesson number in course
-  order (`00`–`07` so far). The next note is `08-…`.
+  order (`00`–`08` so far). The next note is `09-…`.
 - Adding a note means adding a line to `content/_meta.js` too, or it will not appear in the
   sidebar. The `NN` prefix does not order the sidebar on its own.
 - The `# H1` is the lesson title; `##` are the lesson's sections and `###` its subsections.
@@ -53,7 +53,7 @@ SVG file rules:
 
 - Named with a **globally sequential three-digit counter across the whole course**, not
   per-lesson. `000`–`002` and every converted screenshot's number are now unused gaps — the
-  counter is never renumbered, so gaps only ever grow. **The next image to add is `036`.**
+  counter is never renumbered, so gaps only ever grow. **The next image to add is `041`.**
 - Reference with a **path relative to the note**, plus a title attribute:
 
   ```markdown
@@ -101,9 +101,3 @@ Three things here are load-bearing and not obvious:
   stay rejectable, hidden from readers of the site.
 - **`public/assets/` is generated.** `scripts/sync-assets.mjs` copies `content/assets` into it
   before every dev run and build. Edit `content/assets/`; never `public/assets/`.
-
-## Planned direction
-
-The 22 course screenshots in `00`–`05` are being replaced with authored mermaid diagrams over
-time. Prefer mermaid when adding or revising a note — it renders on GitHub and on the site,
-needs no counter, and is the author's own work.
