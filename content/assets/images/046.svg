@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 344" width="720" height="344" role="img" aria-labelledby="t d">
+<title id="t">How Cache-Control max-age and Last-Modified play out over time</title>
+<desc id="d">The client asks the origin server for GET /trends. The server answers 200 OK with the trends and two headers: Cache-Control public, max-age 60, and Last-Modified 10:00. For the next 60 seconds the copy is fresh, so any repeat is answered from the cache and no request reaches the server. Sixty seconds later the copy has expired, so the client asks again with the header If-Modified-Since 10:00. If nothing changed, the server replies 304 Not Modified and the client keeps using its copy without downloading it again; if the trends changed, the server replies 200 OK with the new data.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#c9c9c9}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#9aa0a8}
+  .acc{stroke:#0070f3} .accf{fill:#0070f3} .accbg{fill:#eef4ff;stroke:#0070f3}
+  .ok{stroke:#1aa179} .okf{fill:#128a66} .okbg{fill:#e8f7f2;stroke:#1aa179}
+  .amb{stroke:#e0a040} .ambf{fill:#b87410} .ambbg{fill:#fdf6e8;stroke:#e0a040}
+  .vio{stroke:#7c3aed} .viof{fill:#7c3aed} .viobg{fill:#f3eefe;stroke:#7c3aed}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#475569}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#64748b}
+    .acc{stroke:#60a5fa} .accf{fill:#60a5fa} .accbg{fill:#0c2134;stroke:#60a5fa}
+    .ok{stroke:#34d399} .okf{fill:#34d399} .okbg{fill:#0b2c31;stroke:#34d399}
+    .amb{stroke:#fbbf24} .ambf{fill:#fbbf24} .ambbg{fill:#2e2022;stroke:#fbbf24}
+    .vio{stroke:#a78bfa} .viof{fill:#a78bfa} .viobg{fill:#1e1638;stroke:#a78bfa}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11.5px;font-weight:600} .s{font-size:11px} .m{font-size:10px}
+  .mono{font-size:10px;font-family:ui-monospace,Menlo,monospace}
+</style>
+<rect class="bg" width="720" height="344"/>
+<text class="h mut" x="24" y="24">HTTP CACHING HEADERS · MAX-AGE, THEN LAST-MODIFIED</text>
+<rect class="accbg" x="70" y="40" width="160" height="32" rx="8" stroke-width="1.3"/><text class="n ink" x="150" y="61" text-anchor="middle">Client + its cache</text>
+<rect class="card" x="490" y="40" width="160" height="32" rx="8" stroke-width="1.3"/><text class="n ink" x="570" y="61" text-anchor="middle">Origin server</text>
+<path class="line" d="M150 72 L150 336" stroke-width="1" stroke-dasharray="4 4"/>
+<path class="line" d="M570 72 L570 336" stroke-width="1" stroke-dasharray="4 4"/>
+<text class="mono ink" x="360" y="96" text-anchor="middle">GET /trends</text>
+<path class="line" d="M154 104 L564 104" stroke-width="1.3" marker-end="url(#a)"/>
+<text class="mono ink" x="360" y="124" text-anchor="middle">200 OK + the trends</text>
+<text class="mono accf" x="360" y="137" text-anchor="middle">Cache-Control: public, max-age=60</text>
+<text class="mono accf" x="360" y="150" text-anchor="middle">Last-Modified: 10:00</text>
+<path class="line" d="M564 158 L156 158" stroke-width="1.3" marker-end="url(#a)"/>
+<rect class="okbg" x="138" y="166" width="24" height="64" rx="4" stroke-width="1.2"/>
+<text class="m okf" x="130" y="194" text-anchor="end">fresh</text><text class="m okf" x="130" y="207" text-anchor="end">for 60 s</text>
+<text class="m okf" x="176" y="194">any repeat in here is answered from the cache —</text>
+<text class="m okf" x="176" y="207">no request goes to the server at all</text>
+<text class="m ambf" x="130" y="256" text-anchor="end">60 s later</text>
+<text class="mono ink" x="360" y="244" text-anchor="middle">GET /trends</text>
+<text class="mono ambf" x="360" y="257" text-anchor="middle">If-Modified-Since: 10:00</text>
+<path class="amb" d="M154 264 L564 264" stroke-width="1.3" marker-end="url(#a)"/>
+<text class="mono okf" x="360" y="292" text-anchor="middle">304 Not Modified — keep using the copy</text>
+<path class="ok" d="M564 300 L156 300" stroke-width="1.3" marker-end="url(#a)"/>
+<text class="m mut" x="360" y="318" text-anchor="middle">(or 200 OK with the new trends, if they changed after 10:00)</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker></defs>
+</svg>

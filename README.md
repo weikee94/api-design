@@ -19,6 +19,7 @@ re-read quickly rather than read once.
 | 06 | [Important Concepts in Product Architecture](content/06-important-concepts-in-product-architecture.md) | API versioning approaches, evolution strategies, rate limiting, client-adaptive response (Netflix IAC) |
 | 07 | [Data-fetching Patterns](content/07-data-fetching-patterns.md) | short polling and its delay problem, long polling (hanging GET) and its costs |
 | 08 | [Product Architecture III](content/08-product-architecture-iii.md) | SSR and CSR, the web page load process and what slows it, Shandian, resource hints, debouncing, circuit breaker |
+| 09 | [Product Architecture IV](content/09-product-architecture-iv.md) | retries with backoff and jitter, non-retryable status codes, caching layers and eviction, HTTP caching headers, API monitoring |
 
 ## Layout
 

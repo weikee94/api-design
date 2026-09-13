@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 316" width="720" height="316" role="img" aria-labelledby="t d">
+<title id="t">Random jitter breaks up a thundering herd</title>
+<desc id="d">Two panels on the same time axis, three clients each. With backoff only, every client waits exactly m to the power c, so all three retries land at the same three moments and hit the server at once — the thundering herd problem, marked by shaded bands. With backoff plus random jitter, each client adds its own random extra wait, so the retries spread out and never coincide. Each client waits slightly longer on purpose, and in exchange the server receives the retries a few at a time.</desc>
+<style>
+  :root{color-scheme:light dark}
+  .bg{fill:#ffffff} .card{fill:#ffffff;stroke:#c9c9c9}
+  .ink{fill:#111111} .mut{fill:#8a8f98} .line{stroke:#9aa0a8}
+  .acc{stroke:#0070f3} .accf{fill:#0070f3} .accbg{fill:#eef4ff;stroke:#0070f3}
+  .ok{stroke:#1aa179} .okf{fill:#128a66} .okbg{fill:#e8f7f2;stroke:#1aa179} .okdot{fill:#1aa179}
+  .amb{stroke:#e0a040} .ambf{fill:#b87410} .ambbg{fill:#fdf6e8;stroke:#e0a040}
+  .bad{stroke:#b5746e} .badf{fill:#a35d57} .badbg{fill:#f6ecea;stroke:#b5746e} .baddot{fill:#b5746e} .band{fill:#b5746e;fill-opacity:.14}
+  .vio{stroke:#7c3aed} .viof{fill:#7c3aed} .viobg{fill:#f3eefe;stroke:#7c3aed}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#020617} .card{fill:#0b1220;stroke:#475569}
+    .ink{fill:#ffffff} .mut{fill:#94a3b8} .line{stroke:#64748b}
+    .acc{stroke:#60a5fa} .accf{fill:#60a5fa} .accbg{fill:#0c2134;stroke:#60a5fa}
+    .ok{stroke:#34d399} .okf{fill:#34d399} .okbg{fill:#0b2c31;stroke:#34d399} .okdot{fill:#34d399}
+    .amb{stroke:#fbbf24} .ambf{fill:#fbbf24} .ambbg{fill:#2e2022;stroke:#fbbf24}
+    .bad{stroke:#fb7185} .badf{fill:#fb7185} .badbg{fill:#3f152f;stroke:#fb7185} .baddot{fill:#fb7185} .band{fill:#fb7185;fill-opacity:.18}
+    .vio{stroke:#a78bfa} .viof{fill:#a78bfa} .viobg{fill:#1e1638;stroke:#a78bfa}
+  }
+  text{font-family:system-ui,-apple-system,'Segoe UI','PingFang SC',sans-serif}
+  .h{font-size:11px;font-weight:600;letter-spacing:.08em}
+  .n{font-size:11.5px;font-weight:600} .s{font-size:11px} .m{font-size:10px}
+  .mono{font-size:10px;font-family:ui-monospace,Menlo,monospace}
+</style>
+<rect class="bg" width="720" height="316"/>
+<text class="h mut" x="24" y="24">RANDOM JITTER · BREAKING UP A THUNDERING HERD</text>
+<text class="s ink" x="24" y="52">backoff only</text><text class="m mut" x="104" y="52">every client waits exactly m^c — the retries land together</text>
+<rect class="band" x="173" y="64" width="22" height="64" rx="4"/>
+<rect class="band" x="301" y="64" width="22" height="64" rx="4"/>
+<rect class="band" x="557" y="64" width="22" height="64" rx="4"/>
+<text class="m mut" x="24" y="80">client 1</text><path class="line" d="M120 76 L690 76" stroke-width=".8" stroke-opacity=".5"/>
+<circle class="mut" cx="120" cy="76" r="5"/>
+<circle class="baddot" cx="184" cy="76" r="5"/>
+<circle class="baddot" cx="312" cy="76" r="5"/>
+<circle class="baddot" cx="568" cy="76" r="5"/>
+<text class="m mut" x="24" y="102">client 2</text><path class="line" d="M120 98 L690 98" stroke-width=".8" stroke-opacity=".5"/>
+<circle class="mut" cx="120" cy="98" r="5"/>
+<circle class="baddot" cx="184" cy="98" r="5"/>
+<circle class="baddot" cx="312" cy="98" r="5"/>
+<circle class="baddot" cx="568" cy="98" r="5"/>
+<text class="m mut" x="24" y="124">client 3</text><path class="line" d="M120 120 L690 120" stroke-width=".8" stroke-opacity=".5"/>
+<circle class="mut" cx="120" cy="120" r="5"/>
+<circle class="baddot" cx="184" cy="120" r="5"/>
+<circle class="baddot" cx="312" cy="120" r="5"/>
+<circle class="baddot" cx="568" cy="120" r="5"/>
+<text class="m badf" x="312" y="146" text-anchor="middle">thundering herd — all retries hit the server at once</text>
+<text class="s ink" x="24" y="180">backoff + random jitter</text><text class="m mut" x="152" y="180">a random extra wait per client — the retries spread out</text>
+<text class="m mut" x="24" y="208">client 1</text><path class="line" d="M120 204 L690 204" stroke-width=".8" stroke-opacity=".5"/>
+<circle class="mut" cx="120" cy="204" r="5"/>
+<circle class="okdot" cx="196" cy="204" r="5"/>
+<circle class="okdot" cx="344" cy="204" r="5"/>
+<circle class="okdot" cx="574" cy="204" r="5"/>
+<text class="m mut" x="24" y="230">client 2</text><path class="line" d="M120 226 L690 226" stroke-width=".8" stroke-opacity=".5"/>
+<circle class="mut" cx="120" cy="226" r="5"/>
+<circle class="okdot" cx="222" cy="226" r="5"/>
+<circle class="okdot" cx="318" cy="226" r="5"/>
+<circle class="okdot" cx="619" cy="226" r="5"/>
+<text class="m mut" x="24" y="252">client 3</text><path class="line" d="M120 248 L690 248" stroke-width=".8" stroke-opacity=".5"/>
+<circle class="mut" cx="120" cy="248" r="5"/>
+<circle class="okdot" cx="206" cy="248" r="5"/>
+<circle class="okdot" cx="369" cy="248" r="5"/>
+<circle class="okdot" cx="596" cy="248" r="5"/>
+<path class="line" d="M120 278 L690 278" stroke-width="1" marker-end="url(#a)"/><text class="m mut" x="690" y="294" text-anchor="end">time</text>
+<text class="m mut" x="24" y="300">each client waits a little longer on purpose, and the server gets the retries a few at a time</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="context-stroke"/></marker></defs>
+</svg>

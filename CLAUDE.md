@@ -22,7 +22,7 @@ public/assets/      GENERATED from content/assets — gitignored, never edit
 ## Note file conventions
 
 - Filename: `NN-kebab-case-title.md`, where `NN` is the zero-padded lesson number in course
-  order (`00`–`08` so far). The next note is `09-…`.
+  order (`00`–`09` so far). The next note is `10-…`.
 - Adding a note means adding a line to `content/_meta.js` too, or it will not appear in the
   sidebar. The `NN` prefix does not order the sidebar on its own.
 - The `# H1` is the lesson title; `##` are the lesson's sections and `###` its subsections.
@@ -53,7 +53,7 @@ SVG file rules:
 
 - Named with a **globally sequential three-digit counter across the whole course**, not
   per-lesson. `000`–`002` and every converted screenshot's number are now unused gaps — the
-  counter is never renumbered, so gaps only ever grow. **The next image to add is `041`.**
+  counter is never renumbered, so gaps only ever grow. **The next image to add is `048`.**
 - Reference with a **path relative to the note**, plus a title attribute:
 
   ```markdown

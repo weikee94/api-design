@@ -8,5 +8,6 @@ export default {
   "05-network-sockets-as-a-foundation-for-communication": "05 · Network sockets as a foundation for communication",
   "06-important-concepts-in-product-architecture": "06 · Important concepts in product architecture",
   "07-data-fetching-patterns": "07 · Data-fetching patterns",
-  "08-product-architecture-iii": "08 · Product architecture III"
+  "08-product-architecture-iii": "08 · Product architecture III",
+  "09-product-architecture-iv": "09 · Product architecture IV"
 }
