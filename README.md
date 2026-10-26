@@ -1,7 +1,7 @@
 # api-design
 
-Study notes for the **Grokking API Design** course — one markdown file per lesson, with the
-course diagrams kept alongside them.
+Study notes for the **Grokking API Design** course — one markdown file per lesson, with
+redrawn diagrams (inline mermaid, plus hand-written SVGs where layout matters) alongside them.
 
 Notes are terse on purpose: bullets and comparison tables rather than prose, written to be
 re-read quickly rather than read once.
@@ -25,13 +25,15 @@ re-read quickly rather than read once.
 
 ```
 content/            the notes — one file per lesson (the source of truth)
-content/assets/     lesson images
+content/assets/     lesson figures (hand-written SVGs)
 app/ lib/ scripts/  the Next.js + Nextra site that renders them
 ```
 
-Images use a single sequential counter across all lessons (`000`–`022`, `002` unused), not a
-per-lesson one. They are referenced by a path relative to the note, so they render both on
-github.com and on the site.
+Most diagrams are inline `mermaid` blocks, which GitHub and the site both render natively. A
+hand-written SVG is added only when layout carries meaning that mermaid can't express. SVGs use
+a single sequential counter across all lessons (`023`–`047` so far, next is `048`), not a
+per-lesson one; lower numbers are retired course screenshots and are never reused. They are
+referenced by a path relative to the note, so they render both on github.com and on the site.
 
 ## Running the site locally
 
